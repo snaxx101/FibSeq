@@ -4,7 +4,9 @@
 using namespace std;
 using namespace chrono;
 
-// Iterative
+// =========================================
+// Computes Fibonacci numbers using a loop
+// =========================================
 long long fib_iterative(int n)
 {
     if (n == 1) return 1;
@@ -23,7 +25,9 @@ long long fib_iterative(int n)
     return b;
 }
 
-// Recursive
+// =============================
+// Calls itself twice
+// =============================
 long long fib_recursive(int n)
 {
     if (n <= 2)
