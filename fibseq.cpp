@@ -5,14 +5,16 @@ using namespace std;
 using namespace chrono;
 
 // Iterative
-long long fib_iterative(int n) {
+long long fib_iterative(int n)
+{
     if (n == 1) return 1;
     if (n == 2) return 2;
 
     long long a = 1;
     long long b = 2;
 
-    for (int index = 3; index <= n; index++) {
+    for (int index = 3; index <= n; index++)
+    {
         long long next = a + b;
         a = b;
         b = next;
@@ -22,8 +24,10 @@ long long fib_iterative(int n) {
 }
 
 // Recursive
-long long fib_recursive(int n) {
-    if (n <= 2) {
+long long fib_recursive(int n)
+{
+    if (n <= 2)
+    {
         if (n == 1)
             return 1;
         else
@@ -34,7 +38,8 @@ long long fib_recursive(int n) {
 }
 
 
-int main() {
+int main()
+{
     cout << "Fibonacci Performance Comparison\n";
     cout << "=================================\n\n";
     
@@ -43,7 +48,8 @@ int main() {
     cout << setw(4) << "F(n)" << setw(17) << "Iterative" << setw(15) << "Recursive" << endl;
     cout << string(36, '-') << endl;
     
-    for (int n : tests) {
+    for (int n : tests)
+    {
         // Iterative time
         auto start = high_resolution_clock::now();
         long long result = fib_iterative(n);
@@ -52,7 +58,8 @@ int main() {
         
         // Recursive Time
         long long rec_time = 0;
-        if (n <= 55) {
+        if (n <= 55)
+        {
             start = high_resolution_clock::now();
             fib_recursive(n);
             stop = high_resolution_clock::now();
